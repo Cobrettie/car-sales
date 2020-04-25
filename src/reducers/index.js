@@ -17,5 +17,20 @@ export const initialState = {
 
 export const testReducer = (state = initialState, action) => {
   console.log('testReducer', state, action)
-  return state
+  switch(action.type) {
+    case "ADD_ITEM":
+      return {
+        additionalPrice: state.additionalPrice + action.payload.price,
+        car: {
+          ...state.car,
+          features: [...state.car.features, action.payload]
+        },
+        additionalFeatures: state.additionalFeatures.filter(item => {
+          return item !== action.payload
+        })
+      }
+
+    default:
+      return state
+  }
 }
