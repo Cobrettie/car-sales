@@ -5,14 +5,14 @@ import { removeItem } from '../actions';
 const AddedFeature = props => {
   console.log('AddedFeature props', props)
 
-  const removeItem = event => {
+  const removeFeature = event => {
     event.preventDefault()
     props.removeItem(props.features)
   }
 
   return (
     <li>
-      <button className="button" onClick={removeItem}>X</button>
+      <button className="button" onClick={removeFeature}>X</button>
       {props.feature.name}
     </li>
   );
