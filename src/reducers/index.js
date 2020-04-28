@@ -33,13 +33,14 @@ export const testReducer = (state = initialState, action) => {
     case "REMOVE_ITEM":
       console.log('remove item case', state)
       return {
+        additionalPrice: state.additionalPrice - action.payload.price,
         car: {
           ...state.car,
           features: state.car.features.filter(item => {
             return item !== action.payload
           }) 
         },
-        additionalFeatures: [...state.additionalFeatures, action.payload.name]
+        additionalFeatures: [...state.additionalFeatures, action.payload]
       }
       
     default:
