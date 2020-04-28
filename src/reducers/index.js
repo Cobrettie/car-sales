@@ -24,14 +24,24 @@ export const testReducer = (state = initialState, action) => {
         car: {
           ...state.car,
           features: [...state.car.features, action.payload]
-        },
+        }, // filter through features, return everything that isn't action.payload
         additionalFeatures: state.additionalFeatures.filter(item => {
           return item !== action.payload
         })
       }
     
-    
-
+    case "REMOVE_ITEM":
+      console.log('remove item case', state)
+      return {
+        car: {
+          ...state.car,
+          features: state.car.features.filter(item => {
+            return item !== action.payload
+          }) 
+        },
+        additionalFeatures: [...state.additionalFeatures, action.payload.name]
+      }
+      
     default:
       return state
   }

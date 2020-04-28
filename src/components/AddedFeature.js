@@ -7,7 +7,7 @@ const AddedFeature = props => {
 
   const removeFeature = event => {
     event.preventDefault()
-    props.removeItem(props.features)
+    props.removeItem(props.feature)
   }
 
   return (
@@ -20,6 +20,7 @@ const AddedFeature = props => {
 
 const mapStateToProps = state => {
   return {
+    additionalPrice: state.additionalPrice,
     features: state.car.features
   }
 }

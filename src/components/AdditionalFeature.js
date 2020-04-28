@@ -20,6 +20,7 @@ const AdditionalFeature = props => {
 };
 
 const mapStateToProps = state => {
+  console.log('AdditionalFeature mSTP', state)
   return {
     features: state.additionalFeatures
   }

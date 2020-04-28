@@ -10,6 +10,7 @@ const AddedFeatures = props => {
       {props.car.features.length ? (
         <ol type="1">
           {props.car.features.map(item => (
+            console.log('AddedFeatures mapped item', item),
             <AddedFeature key={item.id} feature={item} />
           ))}
         </ol>
