@@ -16,7 +16,6 @@ export const initialState = {
 }
 
 export const testReducer = (state = initialState, action) => {
-  console.log('testReducer', state, action)
   switch(action.type) {
     case "ADD_ITEM":
       return {
@@ -31,7 +30,6 @@ export const testReducer = (state = initialState, action) => {
       }
     
     case "REMOVE_ITEM":
-      console.log('remove item case', state)
       return {
         additionalPrice: state.additionalPrice - action.payload.price,
         car: {

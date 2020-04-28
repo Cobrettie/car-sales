@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { removeItem } from '../actions';
 
 const AddedFeature = props => {
-  console.log('AddedFeature props', props)
 
   const removeFeature = event => {
     event.preventDefault()
