@@ -24,7 +24,7 @@ export const testReducer = (state = initialState, action) => {
         car: {
           ...state.car,
           features: [...state.car.features, action.payload]
-        }, // filter through features, return everything that isn't action.payload
+        }, // filter through features, return item if it not equal to action.payload
         additionalFeatures: state.additionalFeatures.filter(item => {
           return item !== action.payload
         })
